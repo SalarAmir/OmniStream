@@ -1,10 +1,10 @@
 # OmniStream AI
 
-**[Open the live demo](https://omnistream-ai.onrender.com/)** · [AI workspace](https://omnistream-ai.onrender.com/workspace#ai) · [API reference](https://omnistream-ai.onrender.com/swagger-ui.html) · [CI status](https://github.com/SalarAmir/OmniStream/actions)
+**[Open the live demo](https://omnistream-ai.netlify.app/)** · [AI workspace](https://omnistream-ai.onrender.com/workspace#ai) · [API reference](https://omnistream-ai.onrender.com/swagger-ui.html) · [CI status](https://github.com/SalarAmir/OmniStream/actions)
 
 [Product](#what-you-can-do) · [AI output](#what-ai-extracts) · [Architecture](#architecture) · [Demo limits and privacy](#demo-limits-and-privacy) · [CI/CD](#cicd) · [Run locally](#run-locally) · [Deployment](#deploy-the-complete-web-app)
 
-The free Render service may need about a minute to wake after idle time.
+The landing page is served by Netlify. Entering the workspace opens Render, whose free service may need about a minute to wake after idle time.
 
 ![OmniStream landing page](docs/screenshots/landing.png)
 
