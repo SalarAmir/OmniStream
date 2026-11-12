@@ -182,7 +182,13 @@ The included `render.yaml` configures a Free Render web service. A Neon PostgreS
 
 Flyway creates the schema at startup. The deployed application serves both the landing page and workspace. The hosted portfolio is publicly accessible, with each visitor’s events scoped to their opaque browser session. Historical unowned records remain administrator-only. `PUBLIC_WORKSPACE=false` restores API-key authentication for events. Metrics always require the administrative service key. Supply `GROQ_API_KEY` once in the server environment; the browser receives no provider credential.
 
-Netlify and Vercel configuration files also support a static sample preview. Setting `WORKSPACE_ORIGIN` during that frontend build links it to a live backend. Full ingestion, provider calls, and persistence require the backend deployment.
+### Instant landing page on Netlify
+
+Import this repository into Netlify and deploy its `main` branch. The root `netlify.toml` supplies the build command (`node deploy/build-web.mjs`), publish directory (`dist`), Node version, and the public Render workspace origin. No frontend API key or database credential is required.
+
+Netlify serves the static landing page independently of the Java service. **Enter workspace**, **Help**, and **API reference** open the existing Render application, where ingestion, Groq calls, visitor isolation, and persistence run. Render Free can still take about a minute to wake when entering the workspace after idle time.
+
+Set `WORKSPACE_ORIGIN` in Netlify’s build environment to point to a different HTTPS backend. For a standalone static sample preview, run the build locally without this variable. The Vercel configuration supports the same build script. Keep `.netlify/` out of Git; it contains local site-link state.
 
 Free hosting is subject to provider quotas and idle suspension. The optional Heroku manifest provisions paid resources. Check the selected provider’s current plan before deploying.
 
